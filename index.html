@@ -1,44 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PNP Partners | HR Consulting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Brand favicons -->
+    <link rel="icon" type="image/svg+xml" href="brand/favicons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="brand/favicons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="brand/favicons/favicon-16.png">
+    <link rel="apple-touch-icon" href="brand/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="brand/site.webmanifest">
+    <meta name="theme-color" content="#0F2C59">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* === CSS VARIABLES === */
+        /* === CSS VARIABLES — Brand v1.0 === */
         :root {
             --primary-navy: #0F2C59;
             --secondary-blue: #1A4D8F;
-            --accent-color: #CBA153;
-            --text-dark: #2D3748;
-            --text-light: #4A5568;
-            --bg-light: #F7FAFC;
+            --accent-color: #B8893D;      /* brass — the dot */
+            --accent-deep: #9A7232;
+            --champagne: #E8D9B5;
+            --text-dark: #1A1A1A;          /* ink */
+            --text-light: #6B7280;         /* slate */
+            --bg-light: #FAF8F4;           /* bone */
             --white: #FFFFFF;
-            --border-color: #E2E8F0;
+            --border-color: #E5E7EB;
             --transition: all 0.3s ease;
+
+            --font-display: 'Playfair Display', 'Noto Serif KR', 'Georgia', serif;
+            --font-body: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
         }
 
         /* === GLOBAL STYLES === */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            font-family: var(--font-body);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.65;
             background-color: var(--white);
             scroll-behavior: smooth;
         }
-        h1, h2, h3, h4 { color: var(--primary-navy); font-weight: 700; line-height: 1.3; }
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: var(--primary-navy);
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
         p { margin-bottom: 1rem; color: var(--text-light); }
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
         .section-title {
-            text-align: center; font-size: 2.5rem; margin-bottom: 3.5rem;
-            position: relative; padding-bottom: 1rem;
+            text-align: center; font-size: 2.6rem; margin-bottom: 3.5rem;
+            position: relative; padding-bottom: 1.2rem;
+            letter-spacing: -0.03em;
         }
         .section-title::after {
             content: ''; position: absolute; bottom: 0; left: 50%;
-            transform: translateX(-50%); width: 60px; height: 4px;
+            transform: translateX(-50%); width: 40px; height: 2px;
             background-color: var(--accent-color); border-radius: 2px;
         }
         section { padding: 6rem 0; }
@@ -51,7 +72,18 @@
             position: fixed; width: 100%; top: 0; z-index: 1000;
         }
         nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-navy); text-decoration: none; z-index: 1001; }
+        .logo {
+            display: inline-flex; align-items: center; gap: 12px;
+            font-family: 'Fraunces', 'Noto Serif KR', 'Georgia', serif;
+            font-size: 1.5rem; font-weight: 600;
+            color: var(--primary-navy); text-decoration: none;
+            z-index: 1001; letter-spacing: -0.02em;
+        }
+        .logo::before {
+            content: ''; width: 14px; height: 14px;
+            background: var(--accent-color); border-radius: 50%;
+            flex-shrink: 0;
+        }
 
         .nav-links { display: flex; gap: 2.5rem; align-items: center; margin-right: auto; margin-left: 3rem; }
         .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
@@ -73,7 +105,7 @@
             background: linear-gradient(rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.85)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
             display: flex; align-items: center; text-align: center; color: var(--white);
         }
-        .hero h1 { color: var(--white); font-size: 3.5rem; margin-bottom: 1.5rem; }
+        .hero h1 { color: var(--white); font-size: 3.8rem; margin-bottom: 1.5rem; letter-spacing: -0.03em; }
         .hero p { color: #E2E8F0; font-size: 1.25rem; max-width: 800px; margin: 0 auto 2.5rem; font-weight: 300; }
 
         /* === ABOUT CEO SECTION === */
@@ -150,7 +182,7 @@
             border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 1.05rem;
             text-decoration: none; display: inline-block; transition: var(--transition);
         }
-        .btn-primary:hover { background-color: #B58B3F; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(203, 161, 83, 0.3); }
+        .btn-primary:hover { background-color: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(184, 137, 61, 0.3); }
 
         /* === CONTACT SECTION === */
         .contact-intro { text-align: center; max-width: 600px; margin: 0 auto 3rem auto; font-size: 1.1rem; }
@@ -201,7 +233,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo" data-ko="PNP 파트너스" data-en="PNP Partners">PNP Partners</a>
+                <a href="#" class="logo">PNP Partners</a>
                 <div class="nav-links" id="navLinks">
                     <a href="#about" data-ko="대표 소개" data-en="About CEO">About CEO</a>
                     <a href="#services" data-ko="제공 서비스" data-en="Services">Services</a>
@@ -238,8 +270,8 @@
                     <img src="allenkim.jpeg" alt="Allen Kim - CEO">
                 </div>
                 <div class="about-text">
-                    <h3 class="translatable" data-ko="김정일 (Allen Kim)" data-en="Allen Kim (Kim Jung-il)">Allen Kim (Kim Jung-il)</h3>
-                    <span class="title translatable" data-ko="PNP Partners 대표컨설턴트" data-en="CEO & Representative Consultant">CEO & Representative Consultant</span>
+                    <h3 class="translatable" data-ko="김정일 (Allen Kim)" data-en="Allen Kim">Allen Kim</h3>
+                    <span class="title translatable" data-ko="PNP Partners 대표컨설턴트" data-en="CEO and Representative Consultant">CEO and Representative Consultant</span>
                     <p class="translatable"
                        data-ko="다양한 경험을 바탕으로 종합적이고 전략적인 solution을 제공합니다. 대기업, 중소기업, 정부 등 다양한 회사 경험을 보유하고 있습니다."
                        data-en="Providing comprehensive and strategic solutions based on diverse experience. He possesses varied corporate experience across conglomerates, SMEs, and government.">
@@ -259,7 +291,7 @@
     <!-- SERVICES SECTION -->
     <section id="services" class="bg-light-sec">
         <div class="container">
-            <h2 class="section-title translatable" data-ko="핵심 역량 및 제공 서비스" data-en="Core Services & Packages">Core Services & Packages</h2>
+            <h2 class="section-title translatable" data-ko="핵심 역량 및 제공 서비스" data-en="Core Services and Packages">Core Services and Packages</h2>
             <div class="services-grid">
 
                 <div class="service-card" data-modal="modal-sme" role="button" tabindex="0">
@@ -275,7 +307,7 @@
 
                 <div class="service-card" data-modal="modal-exec" role="button" tabindex="0">
                     <div class="service-icon">🤝</div>
-                    <h3 class="translatable" data-ko="관리자 및 임원 코칭" data-en="Manager & Exec Coaching">Manager & Exec Coaching</h3>
+                    <h3 class="translatable" data-ko="관리자 및 임원 코칭" data-en="Manager and Exec Coaching">Manager and Exec Coaching</h3>
                     <p class="translatable"
                        data-ko="조직의 허리를 강화하는 3~6주 집중 과정. 현업과 연계된 과제를 통해 실질적인 리더십과 소통 능력을 향상시킵니다."
                        data-en="An intensive 3-6 week program to strengthen your organization's core. We improve practical leadership and communication through workflow-integrated exercises.">
@@ -311,7 +343,7 @@
                Most SMEs lack a systematized approach to HR. Without clear criteria, the CEO faces an immense management burden, and employees suffer from low predictability. PNP Partners offers a hands-on coaching approach where system design and execution occur simultaneously.
             </p>
 
-            <h4 class="translatable" data-ko="서비스 운영 구조" data-en="Service Structure & Timeline">Service Structure & Timeline</h4>
+            <h4 class="translatable" data-ko="서비스 운영 구조" data-en="Service Structure and Timeline">Service Structure and Timeline</h4>
             <p class="translatable" data-ko="최초 6개월 계약으로 진행되며, 매 방문 시 경영진 및 인사팀과 2시간 심층 회의를 진행합니다." data-en="Structured as an initial 6-month contract. Each visit includes a 2-hour deep-dive meeting with management and the HR team.">Structured as an initial 6-month contract. Each visit includes a 2-hour deep-dive meeting with management and the HR team.</p>
             <ul>
                 <li class="translatable"
@@ -321,8 +353,8 @@
                 </li>
                 <li class="translatable"
                     data-ko="설계기 (2~5개월차): 월 2회 방문. 초기 성공 과제 선정, 팀 빌딩, 맞춤형 제도 설계 및 즉각적인 실행."
-                    data-en="Phase 2: Design & Execution (Months 2-5): 2 visits/month. Identifying early win tasks, team building, and custom system design.">
-                    Phase 2: Design & Execution (Months 2-5): 2 visits/month. Identifying early win tasks, team building, and custom system design.
+                    data-en="Phase 2: Design and Execution (Months 2-5): 2 visits/month. Identifying early win tasks, team building, and custom system design.">
+                    Phase 2: Design and Execution (Months 2-5): 2 visits/month. Identifying early win tasks, team building, and custom system design.
                 </li>
                 <li class="translatable"
                     data-ko="정리기 (6개월차): 월 2회 방문. 제도 정리, 실행 이슈 파악/보완, 향후 사후 관리 방안 결정."
@@ -339,7 +371,7 @@
     <div class="custom-modal" id="modal-exec">
         <div class="custom-modal-content">
             <span class="close-btn" data-close>&times;</span>
-            <h2 class="translatable" data-ko="관리자 및 임원 코칭" data-en="Manager & Executive Coaching">Manager & Executive Coaching</h2>
+            <h2 class="translatable" data-ko="관리자 및 임원 코칭" data-en="Manager and Executive Coaching">Manager and Executive Coaching</h2>
             <p class="translatable"
                data-ko="조직이 성장함에 따라 리더의 역량이 곧 회사의 한계가 됩니다. 본 프로그램은 3~6주간의 집중적인 커리큘럼을 통해 조직의 중간 관리자와 임원진의 실질적인 변화를 이끌어냅니다."
                data-en="As an organization grows, the capacity of its leaders defines the company's limits. This program drives real change among middle managers and executives through a highly intensive 3-6 week curriculum.">
@@ -349,7 +381,7 @@
             <h4 class="translatable" data-ko="관리자 코칭 (그룹/개인)" data-en="Manager Coaching (Group/Individual)">Manager Coaching (Group/Individual)</h4>
             <ul>
                 <li class="translatable" data-ko="현업 연계형 과제: 일상 업무에서 리더십을 발휘할 수 있도록 설계된 실전형 과제 수행." data-en="Workflow-Integrated Exercises: Practical assignments designed to be executed during normal day-to-day work.">Workflow-Integrated Exercises: Practical assignments designed to be executed during normal day-to-day work.</li>
-                <li class="translatable" data-ko="1:1 면담 및 피드백 스킬: 상하간 소통의 단절을 막고 성과를 촉진하는 대화 기법 훈련." data-en="1-on-1 & Feedback Skills: Training in communication techniques that prevent silos and drive team performance.">1-on-1 & Feedback Skills: Training in communication techniques that prevent silos and drive team performance.</li>
+                <li class="translatable" data-ko="1:1 면담 및 피드백 스킬: 상하간 소통의 단절을 막고 성과를 촉진하는 대화 기법 훈련." data-en="1-on-1 and Feedback Skills: Training in communication techniques that prevent silos and drive team performance.">1-on-1 and Feedback Skills: Training in communication techniques that prevent silos and drive team performance.</li>
             </ul>
 
             <h4 class="translatable" data-ko="임원 코칭 (Executive Track)" data-en="Executive Track Coaching">Executive Track Coaching</h4>
@@ -377,8 +409,8 @@
             <ul>
                 <li class="translatable"
                     data-ko="보상 체계 및 직무급 설계: 역할과 책임에 기반한 공정한 보상 시스템 구축 (삼성생명 직무급 설계 경험 보유)."
-                    data-en="Compensation & Job Grading: Building fair compensation systems based on roles and responsibilities (e.g., Job grading design for Samsung Life Insurance).">
-                    Compensation & Job Grading: Building fair compensation systems based on roles and responsibilities (e.g., Job grading design for Samsung Life Insurance).
+                    data-en="Compensation and Job Grading: Building fair compensation systems based on roles and responsibilities (e.g., Job grading design for Samsung Life Insurance).">
+                    Compensation and Job Grading: Building fair compensation systems based on roles and responsibilities (e.g., Job grading design for Samsung Life Insurance).
                 </li>
                 <li class="translatable"
                     data-ko="BSC 성과 관리: 회사 목표와 개인의 목표를 정렬하는 실질적인 평가 체계 도입 (인천지하철공사 프로젝트 수행)."
@@ -465,15 +497,21 @@
         document.addEventListener('DOMContentLoaded', () => {
 
             // === Language Toggle ===
-            let currentLang = 'en';
+            let currentLang = 'ko';
             const langBtn = document.getElementById('langBtn');
 
-            langBtn.addEventListener('click', () => {
-                currentLang = currentLang === 'en' ? 'ko' : 'en';
+            const applyLang = () => {
                 document.querySelectorAll('[data-' + currentLang + ']').forEach(el => {
                     el.innerHTML = el.getAttribute('data-' + currentLang);
                 });
                 langBtn.innerText = currentLang === 'en' ? 'Switch to KOR' : 'Switch to ENG';
+            };
+
+            applyLang();
+
+            langBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'ko' : 'en';
+                applyLang();
             });
 
             // === Mobile Menu ===
