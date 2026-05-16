@@ -1,0 +1,26 @@
+{
+  "name": "PNP Partners",
+  "short_name": "PNP",
+  "description": "People & Performance Partners — HR consulting",
+  "icons": [
+    {
+      "src": "favicons/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicons/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#0F2C59",
+  "background_color": "#FAF8F4",
+  "display": "standalone"
+}

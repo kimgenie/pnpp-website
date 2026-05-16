@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PNP Partners — Brand Sheet</title>
+<link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F2C59;
+    --navy-deep: #081B3A;
+    --brass: #B8893D;
+    --brass-light: #C9A961;
+    --champagne: #E8D9B5;
+    --ink: #1A1A1A;
+    --slate: #6B7280;
+    --line: #E5E7EB;
+    --bone: #FAF8F4;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bone);
+    color: var(--ink);
+    line-height: 1.6;
+    padding: 5rem 2rem 8rem;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+
+  /* HEADER */
+  header.brand-head {
+    padding-bottom: 3rem;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .brand-tag {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--brass); font-weight: 600; margin-bottom: 1.2rem;
+  }
+  .brand-tag::before { content: ''; width: 28px; height: 1px; background: var(--brass); }
+  h1.title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    color: var(--navy);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+  .lede {
+    margin-top: 1.2rem;
+    max-width: 680px;
+    color: var(--slate);
+    font-size: 1.1rem;
+  }
+
+  /* SECTION */
+  section { margin-top: 5rem; }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.9rem;
+    color: var(--navy);
+    letter-spacing: -0.015em;
+    margin-bottom: 0.4rem;
+  }
+  .section-sub {
+    color: var(--slate);
+    font-size: 0.95rem;
+    margin-bottom: 2.2rem;
+    max-width: 680px;
+  }
+  .rule {
+    height: 1px; background: var(--line);
+    margin: 0.3rem 0 2rem;
+  }
+
+  /* HERO MARK */
+  .mark-stage {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 7rem 4rem;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+  .mark-stage .dot {
+    width: 220px; height: 220px;
+    background: var(--brass);
+    border-radius: 50%;
+  }
+  .mark-caption {
+    color: var(--slate); font-size: 0.9rem;
+    display: flex; justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+  }
+  .mark-caption strong { color: var(--ink); font-weight: 600; }
+
+  /* LOCKUPS */
+  .lockup-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem;
+  }
+  .lockup {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 3rem 2.5rem;
+    min-height: 200px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .lockup.dark { background: var(--navy); border-color: var(--navy); }
+  .lockup .preview {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .lockup .preview img { max-width: 100%; max-height: 90px; }
+  .lockup .meta {
+    font-size: 0.78rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--slate);
+    border-top: 1px solid var(--line); padding-top: 1rem;
+  }
+  .lockup.dark .meta { color: var(--champagne); border-color: rgba(255,255,255,0.1); }
+
+  /* HORIZONTAL LOCKUP RENDER (live) */
+  .lockup-horizontal {
+    display: flex; align-items: center; gap: 28px;
+  }
+  .lockup-horizontal .dot {
+    width: 64px; height: 64px; background: var(--brass); border-radius: 50%; flex-shrink: 0;
+  }
+  .lockup-horizontal.dark .dot { background: var(--brass); }
+  .lockup-horizontal .wordmark {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: 3rem; color: var(--navy); letter-spacing: -0.025em;
+    line-height: 1;
+  }
+  .lockup-horizontal.dark .wordmark { color: var(--white); }
+
+  /* STACKED LOCKUP RENDER */
+  .lockup-stacked {
+    display: flex; flex-direction: column; align-items: center; gap: 1.4rem;
+  }
+  .lockup-stacked .dot {
+    width: 56px; height: 56px; background: var(--brass); border-radius: 50%;
+  }
+  .lockup-stacked .wordmark {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: 2.4rem; color: var(--navy); letter-spacing: -0.025em;
+    line-height: 1;
+  }
+  .lockup-stacked .tagline {
+    font-family: 'Inter', sans-serif; font-weight: 500;
+    font-size: 0.7rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--brass);
+    margin-top: -0.4rem;
+  }
+
+  /* KOREAN LOCKUP */
+  .lockup-horizontal .wordmark-ko {
+    font-family: 'Noto Serif KR', serif; font-weight: 600;
+    font-size: 2.6rem; color: var(--navy); letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  /* COLOR SYSTEM */
+  .colors {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+  }
+  .swatch {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .swatch .chip { height: 140px; }
+  .swatch .info { padding: 1.2rem 1.4rem; }
+  .swatch .name {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: 1.15rem; color: var(--navy);
+  }
+  .swatch .hex {
+    font-family: 'Inter', sans-serif; font-weight: 500;
+    font-size: 0.85rem; color: var(--slate); letter-spacing: 0.05em;
+    margin-top: 0.2rem;
+  }
+  .swatch .role {
+    font-size: 0.78rem; color: var(--slate); margin-top: 0.6rem;
+  }
+
+  /* TYPOGRAPHY SPECIMEN */
+  .type-block {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .type-label {
+    font-size: 0.78rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--brass); font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+  .type-sample-display {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: 4rem; color: var(--navy);
+    letter-spacing: -0.025em; line-height: 1.05;
+  }
+  .type-sample-body {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 1.05rem; color: var(--ink); line-height: 1.7;
+    max-width: 680px;
+  }
+  .type-meta {
+    margin-top: 1.4rem; padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem; color: var(--slate);
+    display: flex; gap: 2rem;
+  }
+  .type-meta span strong { color: var(--ink); font-weight: 600; }
+
+  /* CONSTRUCTION */
+  .construction {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 3rem; display: flex; gap: 3rem; align-items: center;
+  }
+  .construction .grid-stage {
+    flex-shrink: 0; position: relative; width: 320px; height: 320px;
+    background: var(--bone); border-radius: 8px; padding: 40px;
+  }
+  .grid-stage::before, .grid-stage::after {
+    content: ''; position: absolute; border: 1px dashed var(--brass); opacity: 0.4;
+  }
+  .grid-stage::before {
+    top: 40px; left: 40px; right: 40px; bottom: 40px;
+  }
+  .grid-stage .dot {
+    width: 100%; height: 100%; background: var(--brass); border-radius: 50%;
+  }
+  .construction .notes p {
+    color: var(--slate); margin-bottom: 0.8rem;
+  }
+  .construction .notes code {
+    background: var(--bone); padding: 2px 8px; border-radius: 4px;
+    font-family: 'Inter', monospace; font-size: 0.85em; color: var(--navy);
+  }
+
+  /* DONT */
+  .dont-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+  }
+  .dont {
+    background: var(--white); border: 1px solid var(--line);
+    border-radius: 14px; padding: 2rem; text-align: center; position: relative;
+  }
+  .dont .preview {
+    height: 110px; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .dont .preview .dot { width: 60px; height: 60px; border-radius: 50%; background: var(--brass); }
+  .dont .preview .squished { width: 100px; height: 35px; background: var(--brass); border-radius: 50%; }
+  .dont .preview .wrong-color { background: #6B5DD3; }
+  .dont .preview .with-shadow { box-shadow: 0 12px 24px rgba(0,0,0,0.3); }
+  .dont .preview .outlined { background: transparent; border: 4px solid var(--brass); }
+  .dont .preview .with-gradient { background: linear-gradient(135deg, #B8893D, #E8D9B5); }
+  .dont .preview .rotated { transform: rotate(35deg); border-radius: 30% 70% 30% 70%; }
+  .dont .label {
+    font-size: 0.85rem; color: var(--slate);
+  }
+  .dont .label strong { color: #B33A3A; font-weight: 600; }
+
+  /* VOICE */
+  .voice {
+    background: var(--navy); color: var(--white);
+    border-radius: 18px; padding: 3.5rem 3rem;
+  }
+  .voice h2 { color: var(--white); }
+  .voice .section-sub { color: var(--champagne); }
+  .voice-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    margin-top: 2rem;
+  }
+  .voice-col h4 {
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--brass-light); margin-bottom: 0.8rem;
+  }
+  .voice-col p {
+    color: #cfd6e3; margin-bottom: 0.6rem; font-size: 0.98rem;
+  }
+  .voice-col p::before { content: '— '; color: var(--brass-light); }
+
+  /* META FOOTER */
+  footer.meta-footer {
+    margin-top: 6rem; padding-top: 3rem;
+    border-top: 1px solid var(--line);
+    color: var(--slate); font-size: 0.85rem;
+    display: flex; justify-content: space-between;
+  }
+
+  @media (max-width: 800px) {
+    .lockup-grid, .colors, .dont-grid, .voice-grid { grid-template-columns: 1fr; }
+    .construction { flex-direction: column; }
+    .lockup-horizontal .wordmark { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="brand-head">
+  <div class="brand-tag">PNP Partners · Brand System · v1.0</div>
+  <h1 class="title">One dot.<br>One firm.<br>One promise.</h1>
+  <p class="lede">
+    The PNP Partners mark is a single brass dot — the persimmon (감), a Korean symbol of patience and ripening. The dot does one job: be <em>the</em> dot. Over time, it becomes the firm.
+  </p>
+</header>
+
+<!-- ============ THE MARK ============ -->
+<section>
+  <h2>The mark</h2>
+  <p class="section-sub">A perfect circle in brass. No stem, no leaf, no ornament. Confidence by subtraction.</p>
+  <div class="rule"></div>
+
+  <div class="mark-stage">
+    <div class="dot"></div>
+  </div>
+  <div class="mark-caption">
+    <span><strong>Color</strong> · Brass <code style="font-family: monospace">#B8893D</code></span>
+    <span><strong>Shape</strong> · Perfect circle</span>
+    <span><strong>Meaning</strong> · 감 — patience, ripening, wisdom</span>
+  </div>
+</section>
+
+<!-- ============ LOCKUPS ============ -->
+<section>
+  <h2>Lockups</h2>
+  <p class="section-sub">Four official arrangements. Use horizontal for digital headers, stacked for print and lobby, Korean for domestic touchpoints, and inverse on any dark surface.</p>
+  <div class="rule"></div>
+
+  <div class="lockup-grid">
+
+    <div class="lockup">
+      <div class="preview">
+        <div class="lockup-horizontal">
+          <div class="dot"></div>
+          <div class="wordmark">PNP Partners</div>
+        </div>
+      </div>
+      <div class="meta">Horizontal · primary</div>
+    </div>
+
+    <div class="lockup">
+      <div class="preview">
+        <div class="lockup-stacked">
+          <div class="dot"></div>
+          <div class="wordmark">PNP Partners</div>
+          <div class="tagline">People &amp; Performance</div>
+        </div>
+      </div>
+      <div class="meta">Stacked · with tagline</div>
+    </div>
+
+    <div class="lockup">
+      <div class="preview">
+        <div class="lockup-horizontal">
+          <div class="dot"></div>
+          <div class="wordmark-ko">PNP 파트너스</div>
+        </div>
+      </div>
+      <div class="meta">Korean · domestic</div>
+    </div>
+
+    <div class="lockup dark">
+      <div class="preview">
+        <div class="lockup-horizontal dark">
+          <div class="dot"></div>
+          <div class="wordmark">PNP Partners</div>
+        </div>
+      </div>
+      <div class="meta">Inverse · on navy</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ COLOR ============ -->
+<section>
+  <h2>Color system</h2>
+  <p class="section-sub">Navy and brass do almost all the work. Everything else is structural — bone for surfaces, slate for body copy. Resist the urge to add a fifth color.</p>
+  <div class="rule"></div>
+
+  <div class="colors">
+    <div class="swatch">
+      <div class="chip" style="background:#0F2C59"></div>
+      <div class="info">
+        <div class="name">Navy</div>
+        <div class="hex">#0F2C59 · RGB 15 44 89</div>
+        <div class="role">Primary. Wordmarks, headers, dark surfaces.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:#B8893D"></div>
+      <div class="info">
+        <div class="name">Brass</div>
+        <div class="hex">#B8893D · RGB 184 137 61</div>
+        <div class="role">The dot. Used sparingly elsewhere — never for large areas.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:#E8D9B5"></div>
+      <div class="info">
+        <div class="name">Champagne</div>
+        <div class="hex">#E8D9B5 · RGB 232 217 181</div>
+        <div class="role">Quiet accent. Use on navy surfaces only.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:#FAF8F4; border-bottom:1px solid var(--line);"></div>
+      <div class="info">
+        <div class="name">Bone</div>
+        <div class="hex">#FAF8F4 · RGB 250 248 244</div>
+        <div class="role">Page background. Warmer than #FFF; do not substitute.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:#1A1A1A"></div>
+      <div class="info">
+        <div class="name">Ink</div>
+        <div class="hex">#1A1A1A · RGB 26 26 26</div>
+        <div class="role">Body text. Not pure black.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:#6B7280"></div>
+      <div class="info">
+        <div class="name">Slate</div>
+        <div class="hex">#6B7280 · RGB 107 114 128</div>
+        <div class="role">Secondary text, captions, metadata.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TYPOGRAPHY ============ -->
+<section>
+  <h2>Typography</h2>
+  <p class="section-sub">Fraunces for voice. Inter for clarity. Noto Serif KR for Korean display. Three families is the ceiling — never four.</p>
+  <div class="rule"></div>
+
+  <div class="type-block">
+    <div class="type-label">Display · Fraunces · Semibold</div>
+    <div class="type-sample-display">People decisions<br>are everything.</div>
+    <div class="type-meta">
+      <span><strong>Family:</strong> Fraunces</span>
+      <span><strong>Weight:</strong> 600</span>
+      <span><strong>Tracking:</strong> -2.5%</span>
+      <span><strong>Use:</strong> Headlines, marquees, the wordmark</span>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-label">Body · Inter · Regular</div>
+    <div class="type-sample-body">
+      Most SMEs lack a systematized approach to HR. Without clear criteria, the CEO faces an immense management burden, and employees suffer from low predictability. PNP Partners offers a hands-on coaching approach where system design and execution occur simultaneously.
+    </div>
+    <div class="type-meta">
+      <span><strong>Family:</strong> Inter</span>
+      <span><strong>Weight:</strong> 400 / 600</span>
+      <span><strong>Line height:</strong> 1.65</span>
+      <span><strong>Use:</strong> All body copy, UI, captions</span>
+    </div>
+  </div>
+
+  <div class="type-block">
+    <div class="type-label">Korean · Noto Serif KR · Semibold</div>
+    <div class="type-sample-display" style="font-family: 'Noto Serif KR', serif; font-size: 3rem;">인사가 만사다.<br>그런데 인사는 어렵다.</div>
+    <div class="type-meta">
+      <span><strong>Family:</strong> Noto Serif KR</span>
+      <span><strong>Weight:</strong> 600 / 700</span>
+      <span><strong>Use:</strong> Korean display, headlines</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONSTRUCTION ============ -->
+<section>
+  <h2>Construction &amp; clear space</h2>
+  <p class="section-sub">Every measurement is expressed in units of <code style="background:var(--bone); padding:2px 8px; border-radius:4px;">x</code> — the diameter of the dot. This lets the system scale from favicon to billboard without losing proportion.</p>
+  <div class="rule"></div>
+
+  <div class="construction">
+    <div class="grid-stage">
+      <div class="dot"></div>
+    </div>
+    <div class="notes">
+      <p><strong style="color:var(--navy)">Clear space.</strong> Reserve a margin of at least <code>0.75x</code> on all sides of the mark. Nothing crosses this boundary — not text, not images, not other logos.</p>
+      <p><strong style="color:var(--navy)">Minimum size.</strong> The mark must never appear smaller than <code>16px</code> digital / <code>5mm</code> print. Below that, edge anti-aliasing destroys the form.</p>
+      <p><strong style="color:var(--navy)">Wordmark spacing.</strong> In horizontal lockup, the gap between dot and "P" is <code>0.5x</code>. Cap-height of "P" equals <code>x</code>.</p>
+      <p><strong style="color:var(--navy)">Alignment.</strong> Dot center aligns to the optical center of the wordmark — not the cap line, not the baseline.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DON'T ============ -->
+<section>
+  <h2>Don't</h2>
+  <p class="section-sub">The mark earns its power through restraint. Anything below breaks it.</p>
+  <div class="rule"></div>
+
+  <div class="dont-grid">
+    <div class="dont">
+      <div class="preview"><div class="dot squished"></div></div>
+      <div class="label"><strong>Don't</strong> stretch or squish</div>
+    </div>
+    <div class="dont">
+      <div class="preview"><div class="dot wrong-color"></div></div>
+      <div class="label"><strong>Don't</strong> recolor outside the system</div>
+    </div>
+    <div class="dont">
+      <div class="preview"><div class="dot with-shadow"></div></div>
+      <div class="label"><strong>Don't</strong> add shadows or bevels</div>
+    </div>
+    <div class="dont">
+      <div class="preview"><div class="dot outlined"></div></div>
+      <div class="label"><strong>Don't</strong> use as outline only</div>
+    </div>
+    <div class="dont">
+      <div class="preview"><div class="dot with-gradient"></div></div>
+      <div class="label"><strong>Don't</strong> apply gradients</div>
+    </div>
+    <div class="dont">
+      <div class="preview"><div class="dot rotated"></div></div>
+      <div class="label"><strong>Don't</strong> redraw or distort the shape</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOICE ============ -->
+<section>
+  <div class="voice">
+    <h2>Voice &amp; tone</h2>
+    <p class="section-sub">Speak like a senior consultant who has been in the room and seen the failure mode. Direct, considered, sparing.</p>
+
+    <div class="voice-grid">
+      <div class="voice-col">
+        <h4>Do</h4>
+        <p>Say less. Land harder.</p>
+        <p>Use specifics: numbers, durations, named firms.</p>
+        <p>Frame outcomes the CEO actually loses sleep over.</p>
+        <p>Write the way you would brief a board.</p>
+        <p>Treat Korean and English as equals, not translations.</p>
+      </div>
+      <div class="voice-col">
+        <h4>Don't</h4>
+        <p>"Holistic," "synergy," "tailored solutions."</p>
+        <p>Hedged claims. Marketing bombast.</p>
+        <p>Three adjectives where one verb would do.</p>
+        <p>Promise outcomes you can't measure.</p>
+        <p>Translate Korean copy. Write it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="meta-footer">
+  <span>PNP Partners — Brand System v1.0</span>
+  <span>Issued · May 2026</span>
+</footer>
+
+</div>
+</body>
+</html>

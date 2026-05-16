@@ -1,0 +1,57 @@
+/* PNP Partners — Brand Tokens
+ * Drop this into your stylesheet, then use the variables.
+ * Single source of truth for color, type, and spacing primitives.
+ */
+
+:root {
+  /* === COLOR === */
+  --pnp-navy:       #0F2C59;
+  --pnp-navy-deep:  #081B3A;
+  --pnp-brass:      #B8893D;
+  --pnp-brass-lt:   #C9A961;
+  --pnp-champagne:  #E8D9B5;
+  --pnp-bone:       #FAF8F4;
+  --pnp-ink:        #1A1A1A;
+  --pnp-slate:      #6B7280;
+  --pnp-line:       #E5E7EB;
+  --pnp-white:      #FFFFFF;
+
+  /* === TYPOGRAPHY === */
+  --pnp-font-display: 'Fraunces', 'Georgia', serif;
+  --pnp-font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --pnp-font-ko:      'Noto Serif KR', serif;
+  --pnp-font-ko-body: 'Noto Sans KR', sans-serif;
+
+  --pnp-display-tracking: -0.025em;
+  --pnp-body-leading:     1.65;
+
+  /* === SPACING (in units of x, where x = dot diameter) === */
+  --pnp-clear-space:   0.75;   /* multiply by dot diameter */
+  --pnp-wordmark-gap:  0.5;
+}
+
+/* === BASE === */
+body {
+  font-family: var(--pnp-font-body);
+  color: var(--pnp-ink);
+  background: var(--pnp-bone);
+  line-height: var(--pnp-body-leading);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--pnp-font-display);
+  font-weight: 600;
+  color: var(--pnp-navy);
+  letter-spacing: var(--pnp-display-tracking);
+  line-height: 1.1;
+}
+
+/* === THE DOT === */
+.pnp-dot {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: var(--pnp-brass);
+  border-radius: 50%;
+  vertical-align: middle;
+}

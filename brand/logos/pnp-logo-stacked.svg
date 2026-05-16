@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" width="480" height="280">
+  <title>PNP Partners — Stacked Lockup</title>
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&amp;family=Inter:wght@500&amp;display=swap');
+      .wordmark { font-family: 'Fraunces', 'Georgia', serif; font-weight: 600; font-size: 64px; fill: #0F2C59; letter-spacing: -1.5px; }
+      .tagline { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; fill: #B8893D; letter-spacing: 4.5px; text-transform: uppercase; }
+    </style>
+  </defs>
+  <circle cx="240" cy="60" r="32" fill="#B8893D"/>
+  <text x="240" y="180" class="wordmark" text-anchor="middle">PNP Partners</text>
+  <text x="240" y="220" class="tagline" text-anchor="middle">People &amp; Performance</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" width="640" height="120">
+  <title>PNP Partners — Korean Lockup</title>
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&amp;display=swap');
+      .wordmark-ko { font-family: 'Noto Serif KR', serif; font-weight: 600; font-size: 60px; fill: #0F2C59; letter-spacing: -1px; }
+    </style>
+  </defs>
+  <circle cx="56" cy="60" r="32" fill="#B8893D"/>
+  <text x="120" y="80" class="wordmark-ko">PNP 파트너스</text>
+</svg>
