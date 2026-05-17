@@ -268,6 +268,16 @@
             font-size: 1rem; transition: var(--transition);
         }
         .submit-btn:hover { background-color: var(--secondary-blue); transform: translateY(-2px); }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .form-status {
+            margin-top: 1.2rem;
+            padding: 0.85rem 1rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            display: none;
+        }
+        .form-status.success { display: block; background: #F0F7F0; color: #2D6E3D; border: 1px solid #C8E6C9; }
+        .form-status.error { display: block; background: #FDF2F2; color: #8B2D2D; border: 1px solid #F4C7C3; }
 
         /* === FOOTER === */
         footer { background-color: #0A1D3D; color: #A0AEC0; text-align: center; padding: 2.5rem 0; font-size: 0.9rem; }
@@ -531,20 +541,23 @@
                 </div>
 
                 <div class="contact-form-box">
-                    <form action="mailto:allenkim44@gmail.com" method="post" enctype="text/plain">
+                    <form id="contactForm" action="https://formspree.io/f/xojbakpo" method="POST">
+                        <input type="hidden" name="_subject" value="New inquiry from pnpp.kr">
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
                         <div class="form-group">
                             <label for="name" class="translatable" data-ko="성함 / 회사명" data-en="Name / Company Name">Name / Company Name</label>
-                            <input type="text" id="name" name="Name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="email" class="translatable" data-ko="연락처 이메일" data-en="Email Address">Email Address</label>
-                            <input type="email" id="email" name="Email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="message" class="translatable" data-ko="문의 내용" data-en="Your Message">Your Message</label>
-                            <textarea id="message" name="Message" class="form-control" required></textarea>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
                         </div>
                         <button type="submit" class="submit-btn translatable" data-ko="메시지 전송하기" data-en="Send Message">Send Message</button>
+                        <div class="form-status" id="formStatus"></div>
                     </form>
                 </div>
             </div>
@@ -651,6 +664,45 @@
                 if (e.key === 'Escape') {
                     document.querySelectorAll('.custom-modal.active').forEach(closeModal);
                 }
+            });
+
+            // === Contact Form (Formspree async submit) ===
+            const contactForm = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
+            const submitBtn = contactForm.querySelector('.submit-btn');
+
+            const messages = {
+                success: { en: "Thanks — we'll reply within 1 business day.", ko: "감사합니다. 1영업일 이내에 회신드리겠습니다." },
+                error:   { en: "Something went wrong. Please email allenkim44@gmail.com directly.", ko: "전송에 실패했습니다. allenkim44@gmail.com으로 직접 연락해 주세요." },
+                sending: { en: "Sending…", ko: "전송 중…" }
+            };
+
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                formStatus.className = 'form-status';
+                formStatus.textContent = messages.sending[currentLang];
+                formStatus.style.display = 'block';
+
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: new FormData(contactForm),
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        formStatus.textContent = messages.success[currentLang];
+                        formStatus.className = 'form-status success';
+                        contactForm.reset();
+                    } else {
+                        formStatus.textContent = messages.error[currentLang];
+                        formStatus.className = 'form-status error';
+                    }
+                } catch (err) {
+                    formStatus.textContent = messages.error[currentLang];
+                    formStatus.className = 'form-status error';
+                }
+                submitBtn.disabled = false;
             });
         });
     </script>
