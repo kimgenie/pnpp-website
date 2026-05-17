@@ -121,6 +121,39 @@
         .hero h1 { color: var(--white); font-size: 3.8rem; margin-bottom: 1.5rem; letter-spacing: -0.03em; }
         .hero p { color: #E2E8F0; font-size: 1.25rem; max-width: 800px; margin: 0 auto 2.5rem; font-weight: 300; }
 
+        /* === TRUST STRIP === */
+        .trust-strip {
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 3rem 0;
+        }
+        .trust-label {
+            text-align: center;
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1.8rem;
+        }
+        .trust-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem 3.5rem;
+        }
+        .trust-logo {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            letter-spacing: -0.01em;
+            opacity: 0.75;
+            white-space: nowrap;
+        }
+
         /* === ABOUT CEO SECTION === */
         .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
         .about-img img { width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); display: block; margin: 0 auto; }
@@ -505,6 +538,20 @@
                         <button type="submit" class="submit-btn translatable" data-ko="메시지 전송하기" data-en="Send Message">Send Message</button>
                     </form>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip" aria-label="Trusted by">
+        <div class="container">
+            <div class="trust-label">Trusted by</div>
+            <div class="trust-logos">
+                <span class="trust-logo translatable" data-ko="LG전자" data-en="LG Electronics">LG Electronics</span>
+                <span class="trust-logo translatable" data-ko="삼성생명" data-en="Samsung Life">Samsung Life</span>
+                <span class="trust-logo translatable" data-ko="롯데면세점" data-en="Lotte Duty Free">Lotte Duty Free</span>
+                <span class="trust-logo translatable" data-ko="인천지하철공사" data-en="Incheon Transit">Incheon Transit</span>
+                <span class="trust-logo translatable" data-ko="국립생태원" data-en="National Institute of Ecology">National Institute of Ecology</span>
             </div>
         </div>
     </section>
