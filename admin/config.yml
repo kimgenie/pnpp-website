@@ -1,0 +1,524 @@
+# Decap CMS configuration for PNP Partners
+# Edit this file to add/rename/regroup fields visible to the editor.
+# The `name` of each field must match the JSON key in /content.json exactly.
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    update: 'Update {{collection}} via CMS'
+
+# Editorial workflow → every save is a Pull Request you can review on GitHub
+# Comment this out for one-click direct publishing.
+publish_mode: editorial_workflow
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+# Reusable translatable widget (Korean + English pair)
+# Decap does not support YAML anchors in some versions, so we inline each field.
+
+collections:
+  - name: site_content
+    label: "Website Content"
+    description: "Edit any copy on pnpp.kr. Hit 'Save' on top right when done."
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: content
+        label: "Homepage Content"
+        file: "content.json"
+        fields:
+
+          # ─────────────────────────────────────────
+          #  SITE & NAVIGATION
+          # ─────────────────────────────────────────
+          - { label: "Header / Logo wordmark", name: "site.logo", widget: string, hint: "The 'PNP Partners' text in the header. English only." }
+
+          - label: "Navigation / 'About CEO' link"
+            name: "nav.t0"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Navigation / 'Services' link"
+            name: "nav.t1"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Navigation / 'Contact' link"
+            name: "nav.t2"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+
+          # ─────────────────────────────────────────
+          #  HERO SECTION
+          # ─────────────────────────────────────────
+          - { label: "Hero / Eyebrow text", name: "hero.eyebrow", widget: string, hint: "Small caps above headline. English only. e.g. 'PNP Partners · People & Performance'" }
+
+          - label: "Hero / Headline"
+            name: "hero.t0"
+            widget: object
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Hero / Subhead paragraph"
+            name: "hero.t1"
+            widget: object
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+
+          # ─────────────────────────────────────────
+          #  ABOUT / CEO SECTION
+          # ─────────────────────────────────────────
+          - label: "About CEO / Section title ('Meet the CEO')"
+            name: "about.t0"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "About CEO / CEO Name"
+            name: "about.t1"
+            widget: object
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "About CEO / Job Title"
+            name: "about.t2"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "About CEO / Bio paragraph"
+            name: "about.t3"
+            widget: object
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "About CEO / Credential 1"
+            name: "about.t4"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "About CEO / Credential 2"
+            name: "about.t5"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "About CEO / Credential 3"
+            name: "about.t6"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "About CEO / Credential 4"
+            name: "about.t7"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+
+          # ─────────────────────────────────────────
+          #  SERVICES SECTION (3 cards on homepage)
+          # ─────────────────────────────────────────
+          - label: "Services / Section title"
+            name: "services.t0"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Services / Card 1 — Title (SME HR Coaching)"
+            name: "services.t1"
+            widget: object
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Services / Card 1 — Description"
+            name: "services.t2"
+            widget: object
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Services / Card 1 — 'Learn more' button"
+            name: "services.t3"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Services / Card 2 — Title (Manager and Exec Coaching)"
+            name: "services.t4"
+            widget: object
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Services / Card 2 — Description"
+            name: "services.t5"
+            widget: object
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Services / Card 2 — 'Learn more' button"
+            name: "services.t6"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Services / Card 3 — Title (Custom HR Packages)"
+            name: "services.t7"
+            widget: object
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Services / Card 3 — Description"
+            name: "services.t8"
+            widget: object
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Services / Card 3 — 'Learn more' button"
+            name: "services.t9"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+
+          # ─────────────────────────────────────────
+          #  SME MODAL (opens when Card 1 clicked)
+          # ─────────────────────────────────────────
+          - label: "SME Modal / Title"
+            name: "modal_sme.t0"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "SME Modal / Intro paragraph"
+            name: "modal_sme.t1"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "SME Modal / Subhead ('Service Structure and Timeline')"
+            name: "modal_sme.t2"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "SME Modal / Sub-intro line"
+            name: "modal_sme.t3"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "SME Modal / Phase 1 bullet"
+            name: "modal_sme.t4"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "SME Modal / Phase 2 bullet"
+            name: "modal_sme.t5"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "SME Modal / Phase 3 bullet"
+            name: "modal_sme.t6"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "SME Modal / CTA button"
+            name: "modal_sme.t7"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+
+          # ─────────────────────────────────────────
+          #  EXECUTIVE COACHING MODAL
+          # ─────────────────────────────────────────
+          - label: "Executive Modal / Title"
+            name: "modal_exec.t0"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Executive Modal / Intro paragraph"
+            name: "modal_exec.t1"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Executive Modal / Subhead 1 ('Manager Coaching')"
+            name: "modal_exec.t2"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Executive Modal / Manager bullet 1 (Workflow-Integrated Exercises)"
+            name: "modal_exec.t3"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Executive Modal / Manager bullet 2 (1-on-1 and Feedback Skills)"
+            name: "modal_exec.t4"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Executive Modal / Subhead 2 ('Executive Track')"
+            name: "modal_exec.t5"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Executive Modal / Exec bullet 1 (Change Management)"
+            name: "modal_exec.t6"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Executive Modal / Exec bullet 2 (Strategic Decision Making)"
+            name: "modal_exec.t7"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Executive Modal / CTA button"
+            name: "modal_exec.t8"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+
+          # ─────────────────────────────────────────
+          #  CUSTOM HR MODAL
+          # ─────────────────────────────────────────
+          - label: "Custom HR Modal / Title"
+            name: "modal_custom.t0"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Custom HR Modal / Intro paragraph"
+            name: "modal_custom.t1"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Custom HR Modal / Subhead ('Key Consulting Areas')"
+            name: "modal_custom.t2"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Custom HR Modal / Bullet 1 (Compensation and Job Grading)"
+            name: "modal_custom.t3"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Custom HR Modal / Bullet 2 (BSC Performance Management)"
+            name: "modal_custom.t4"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Custom HR Modal / Bullet 3 (Low-Performer Management)"
+            name: "modal_custom.t5"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Custom HR Modal / Bullet 4 (Organizational Design)"
+            name: "modal_custom.t6"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+          - label: "Custom HR Modal / CTA button"
+            name: "modal_custom.t7"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+
+          # ─────────────────────────────────────────
+          #  CONTACT SECTION
+          # ─────────────────────────────────────────
+          - label: "Contact / Section title"
+            name: "contact.t0"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Contact / Intro paragraph"
+            name: "contact.t1"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: text }
+              - { label: "English", name: en, widget: text }
+
+          - { label: "Contact box / Brand wordmark", name: "contact.logo", widget: string, hint: "Always English." }
+          - { label: "Contact box / Brand tagline", name: "contact.tagline", widget: string, hint: "Always English." }
+
+          - label: "Contact / 'Location' label"
+            name: "contact.t2"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Contact / Location value"
+            name: "contact.t3"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+
+          - label: "Contact / 'Phone' label"
+            name: "contact.t4"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - { label: "Contact / Phone number", name: "contact.phone", widget: string }
+
+          - label: "Contact / 'Email' label"
+            name: "contact.t5"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - { label: "Contact / Email address", name: "contact.email", widget: string }
+
+          - label: "Contact form / 'Name' field label"
+            name: "contact.t6"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Contact form / 'Email' field label"
+            name: "contact.t7"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Contact form / 'Message' field label"
+            name: "contact.t8"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Contact form / Submit button"
+            name: "contact.t9"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+
+          # ─────────────────────────────────────────
+          #  TRUSTED-BY STRIP (bottom of page)
+          # ─────────────────────────────────────────
+          - { label: "Trust strip / Label ('Trusted by')", name: "trust.label", widget: string, hint: "Always English." }
+          - label: "Trust strip / Client 1"
+            name: "trust.t0"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Trust strip / Client 2"
+            name: "trust.t1"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Trust strip / Client 3"
+            name: "trust.t2"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Trust strip / Client 4"
+            name: "trust.t3"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "Trust strip / Client 5"
+            name: "trust.t4"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }
+
+          # ─────────────────────────────────────────
+          #  FOOTER
+          # ─────────────────────────────────────────
+          - label: "Footer / Copyright line"
+            name: "footer.t0"
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "Korean", name: ko, widget: string }
+              - { label: "English", name: en, widget: string }

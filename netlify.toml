@@ -1,0 +1,26 @@
+# Netlify configuration for PNP Partners
+# Static site — no build step needed. Just publish the repo root.
+
+[build]
+  publish = "."
+  command = ""
+
+# Send /admin to the Decap CMS entry point with no extension fuss
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Allow the CMS admin page to be framed by itself only
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
